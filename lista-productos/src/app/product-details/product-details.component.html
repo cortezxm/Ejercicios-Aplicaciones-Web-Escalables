@@ -1,0 +1,19 @@
+<div *ngIf="product" class="product-details">
+  <h2>{{ product.name }}</h2>
+
+  <img [src]="product.imgURL" alt="{{ product.name }}" class="product-image" />
+
+  <div class="product-info">
+    <p><strong>Precio:</strong> ${{ product.price }}</p>
+    <p>
+      <strong>Stock:</strong>
+      <span class="{{ product.inStock ? 'onStock' : 'outStock' }}">
+        {{ product.inStock ? "Disponible" : "Agotado" }}
+      </span>
+    </p>
+    <p *ngIf="product.onSale" class="sale"><strong>¡Oferta!</strong></p>
+    <p><strong>ID:</strong> {{ product.id }}</p>
+    <p><strong>En stock:</strong> {{ product.inStock ? "Sí" : "No" }}</p>
+    <p><strong>En oferta:</strong> {{ product.onSale ? "Sí" : "No" }}</p>
+  </div>
+</div>
